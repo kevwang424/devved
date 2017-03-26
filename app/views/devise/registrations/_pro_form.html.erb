@@ -26,6 +26,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
       </div>
 
+      <!-- Credit card info won't save into our db because the name is nil. We didn't use f.labels.-->
       <div class="field form-group">
         <%= label_tag :card_number, "Credit Card Number" %>
         <%= text_field_tag :card_number, nil, name: nil, class: "form-control" %>
