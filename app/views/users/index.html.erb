@@ -1,13 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
+      <h1 class="text-center">DevveD Community</h1>
+      <p class="text-center">Welcome to the DevveD community. Users must fill out a profile to be visible in the community.</p>
       <ul class="list-unstyled">
         <% @users.each do |user| %>
           <% if user.profile %>
             <li>
               <div class="well row <%= cycle('light-green-bg', 'dark-green-bg') %>">
                 <div class="col-sm-4 text-center">
-                  <% if user.profile.avatar %>
+                  <% if user.profile.avatar.present? %>
                     <%= link_to user do %>
                       <%= image_tag user.profile.avatar.url, class: "user-index-avatar" %><br>
                     <% end %>
@@ -17,7 +19,12 @@
                   <%= link_to user do %>
                     <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
                   <% end %>
-                  <p><%= user.profile.job_title %></p>
+                  <p>
+                    <%= user.profile.job_title %>
+                    <% if user.plan_id == 2 %>
+                      <span class="label label-danger">PRO</span>
+                    <% end %>
+                  </p>
                 </div>
               </div>
             </li>

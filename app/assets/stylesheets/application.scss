@@ -71,12 +71,12 @@ h1, h2, h3 {
 
 .flash-container {
   position: absolute;
-  width: 100%;
+  width: 30%;
   z-index: 5;
   text-align: center;
 }
 
-.alert-notice, .alert-alert {
+.alert-notice, .alert-alert  {
   text-align: center;
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
