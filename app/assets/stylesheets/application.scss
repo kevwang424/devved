@@ -72,6 +72,8 @@ h1, h2, h3 {
 .flash-container {
   position: absolute;
   width: 100%;
+  z-index: 5;
+  text-align: center;
 }
 
 .alert-notice, .alert-alert {

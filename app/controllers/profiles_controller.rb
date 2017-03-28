@@ -4,7 +4,6 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
-  #POST to users/:user_id/profile
   def create
     #Ensure we have the user that is filling out the form/signed in
     @user = User.find(params[:user_id])
@@ -13,13 +12,26 @@ class ProfilesController < ApplicationController
     @profile = @user.build_profile(profile_params)
     if @profile.save
       flash[:success] = "Your profile has been successfully updated"
-      redirect_to user_path(params[:user_id])
+      redirect_to user_path(id: current_user.id)
     else
       #if it does not save, we will render the form again
       render action: :new
     end
   end
 
+  def edit
+    @profile = User.find(current_user.id).profile
+  end
+
+  def update
+    @profile = User.find(current_user.id).profile
+    if @profile.update_attributes(profile_params)
+      flash[:success] = "Profile was updated successfully"
+      redirect_to user_path(id: current_user.id)
+    else
+      render action: :edit
+    end
+  end
 
   private
 
