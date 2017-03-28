@@ -16,10 +16,10 @@ If signing up as a pro member please use fake credit card number:
   - Exp Date #any future date
 
 ### Technology used
-Boostrap
-Stripe - integration for payments
-Devise - user authentication
-Paperclip - uploading images
+- Boostrap
+- Stripe - integration for payments
+- Devise - user authentication
+- Paperclip - uploading images
 
 ### Installing
 
