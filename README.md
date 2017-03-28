@@ -11,9 +11,9 @@ There is a basic level and a pro level membership.
 #### Note for users going into Production
 DevveD is connected to Stripe test environment so no payments will be charged.
 If signing up as a pro member please use fake credit card number:
-  CC #4111111111111111
-  CVC #123
-  Exp Date #any future date
+  - CC #4111111111111111
+  - CVC #123
+  - Exp Date #any future date
 
 ### Technology used
 Boostrap
